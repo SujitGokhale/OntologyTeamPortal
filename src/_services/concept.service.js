@@ -3,6 +3,7 @@ import { fetchWrapper } from '../_helpers/fetch-wrapper';
 
 //const baseUrl = `${config.apiUrl}/concepts`;
 const baseUrl = 'https://7gi9ssm24e.execute-api.us-east-2.amazonaws.com/latest/concept';
+//const baseUrl = '/concepts';
 
 export const conceptService = {
     getAll,

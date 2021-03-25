@@ -38,7 +38,7 @@ function AddEdit({ history, match }) {
         return conceptService.create(data)
             .then(() => {
                 alertService.success('Concept added', { keepAfterRouteChange: true });
-                //history.push('.');
+                history.push('/Concepts', { from : `${match}/add` });
             })
             .catch(alertService.error);
     }
@@ -47,12 +47,13 @@ function AddEdit({ history, match }) {
         return conceptService.update(id, data)
             .then(() => {
                 alertService.success('Concept updated', { keepAfterRouteChange: true });
+                history.push('/Concepts');
                 //history.push('..');
             })
             .catch(alertService.error);
     }
 
-    const [concept, setConcept] = useState({});
+    const [setConcept] = useState({});
 
     useEffect(() => {
         if (!isAddMode) {
